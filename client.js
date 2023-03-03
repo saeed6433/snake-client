@@ -11,7 +11,10 @@ const net = require("net");
 
   //return conn;
   conn.on("connect", () => {
-    console.log('connected')
+    console.log('Successfully connected to game server')
+  });
+  conn.on("connect", () => {
+    conn.write("Name: SJ")
   });
   conn.on("data", (data) => {
     console.log(data)
