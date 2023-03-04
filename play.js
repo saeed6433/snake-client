@@ -1,6 +1,6 @@
-const {connect} = require("./client.js")
-const {setupInput} = require("./input")
+const {connect} = require("./client.js");
+const {setupInput} = require("./input");
 
 console.log("Connecting ...");
 let obj = connect();
-setupInput(obj)
+setupInput(obj);
