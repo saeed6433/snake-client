@@ -16,9 +16,13 @@ const net = require("net");
   conn.on("connect", () => {
     conn.write("Name: SJ")
   });
-  conn.on("data", (data) => {
-    console.log(data)
-  });
+  
+  // conn.on("connect", () => {
+  //   setTimeout(()=>{conn.write("Move: left")},3000) 
+  // });
+  // conn.on("connect", (data) => {
+  //   console.log(data)
+  // });
 };
 
 
