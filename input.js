@@ -6,7 +6,6 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
-  // return stdin;
   stdin.on("data", handleUserInput);
 };
 const handleUserInput = function(key) {
@@ -17,13 +16,6 @@ const handleUserInput = function(key) {
           : (key === 'd') ? connection.write("Move: right")
             : connection.write("Say: Go");
 
-  // to check cnrl+c and send key to the server
-  // if (key === '\u0003'){
-  //   process.exit();
-  // }
-  // else if (key === 'w'){
-  //       connection.write("Move: left")
-  //     }
 };
 
 module.exports = {setupInput};

@@ -10,22 +10,28 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
-  return conn;
 
   // To check if connection works
-  // conn.on("connect", () => {
-  //   console.log('Successfully connected to game server')
-  // });
+  conn.on("connect", () => {
+    console.log('Successfully connected to game server')
+  });
 
-  //Tp send initials to the server
-  // conn.on("connect", () => {
-  //   conn.write("Name: SJ")
-  // });
+  // To send initials to the server
+  conn.on("connect", () => {
+    conn.write("Name: SJ")
+  });
 
-  // to check the code with setTimout
+  //* to check the code with setTimout
   // conn.on("connect", () => {
   //   setTimeout(()=>{conn.write("Move: left")},3000)
   // });
+
+  conn.on("data", () => {
+    console.log("you ded cuz you idled")
+  });
+
+
+  return conn;
 
 };
 
